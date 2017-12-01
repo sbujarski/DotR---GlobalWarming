@@ -91,7 +91,7 @@ GlobalWarming.plot <- ggplot(GlobalWarming, aes(x=Year, y=Anomoly.F, colour=Sour
   scale_x_continuous("Year", limits=c(1916,2020), breaks=c(seq(1920,2016,20),2016), expand = c(0,0)) +
   scale_y_continuous("Global Temperature Anomaly in ?F", limits=c(-1,2), breaks=seq(-1,2,0.5), expand = c(0,0)) +
   ggtitle("Global Warming over 100 Years") +
-  DoR.Theme()
+  DotR.Theme()
 GlobalWarming.plot
 
 ggsave(GlobalWarming.plot, filename="GlobalWarming.plot.png", width = 8, height=7, dpi=500)
