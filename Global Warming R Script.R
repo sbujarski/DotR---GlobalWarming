@@ -63,21 +63,19 @@ NOAA <- read.xlsx("C:/Users/sbuja/Documents/Data on the Rocks/Global Warming/NOA
 NOAA$Anomoly.F <- NOAA$Anomoly.C * (9/5)
 NOAA$Source <- "NOAA"
 Sp.Desc(NOAA)
+write.csv(NOAA, "NOAA.csv", row.names=F)
 
 NASA <- read.xlsx("C:/Users/sbuja/Documents/Data on the Rocks/Global Warming/NASA.xlsx", sheetName="Sheet1")
 NASA$Anomoly.F <- NASA$Anomoly.C * (9/5)
 NASA$Source <- "NASA"
 Sp.Desc(NASA)
-# 
-# NOAA.CO2 <- read.xlsx("C:/Users/sbuja/Documents/Data on the Rocks/Global Warming/NOAA - CO2.xlsx", sheetName="Sheet1")
-# NOAA.CO2$Source <- "NOAA.CO2"
-# Sp.Desc(NOAA.CO2)
+write.csv(NASA, "NASA.csv", row.names=F)
+
 
 #Merge data
 GlobalWarming <- rbind(NOAA, NASA)
 Sp.Desc(GlobalWarming)
 View(GlobalWarming)
-geom_line(data=NOAA.CO2, aes(x=Year, y=(CO2-300)/100), colour=colours[3]) + 
 
 #GRAPHING DATA----
 colours <- c("#009ae1", "#003d72", "#FF351F")#NOAA-light blue from logo, NASA-deep blue from logo, CO2-red
